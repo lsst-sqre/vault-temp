@@ -1,0 +1,12 @@
+[tools]
+uv = "latest"
+tflint = "latest"
+
+[settings]
+python.uv_venv_auto = "create|source"
+
+[tasks.init]
+run = "uvx pre-commit install"
+
+[tasks.lint]
+run = "uvx pre-commit run --all-files"

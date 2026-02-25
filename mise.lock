@@ -1,0 +1,13 @@
+[[tools.terraform]]
+version = "1.14.5"
+backend = "aqua:hashicorp/terraform"
+
+[[tools.tflint]]
+version = "0.56.0"
+backend = "aqua:terraform-linters/tflint"
+env = ["dev"]
+
+[[tools.uv]]
+version = "0.10.2"
+backend = "aqua:astral-sh/uv"
+env = ["dev"]

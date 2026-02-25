@@ -1,0 +1,35 @@
+name: CI
+
+"on":
+  merge_group: {}
+  pull_request: {}
+  push:
+    branches-ignore:
+      # These should always correspond to pull requests, so ignore them for
+      # the push trigger and let them be triggered by the pull_request
+      # trigger, avoiding running the workflow twice. This is a minor
+      # optimization so there's no need to ensure this is comprehensive.
+      - "dependabot/**"
+      - "gh-readonly-queue/**"
+      - "renovate/**"
+      - "tickets/**"
+      - "t/**"
+      - "u/**"
+    tags:
+      - "*"
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install tools in mise.toml
+        uses: jdx/mise-action@v3
+
+      - name: lint
+        run: mise -E dev run lint

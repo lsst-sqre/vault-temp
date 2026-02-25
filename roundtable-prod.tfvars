@@ -1,0 +1,6 @@
+project         = "roundtable-prod-f6fd"
+region          = "us-central1"
+service_account = "vault-server@roundtable-prod-f6fd.iam.gserviceaccount.com"
+vault_domain    = "vault.lsst.cloud"
+storage_bucket  = "rubin-us-central1-vault-server-temp"
+vault_image_tag = "1.21.2"

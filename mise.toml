@@ -1,0 +1,5 @@
+[tools]
+terraform = "1.14.5"
+
+[settings]
+lockfile = true

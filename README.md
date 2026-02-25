@@ -81,6 +81,7 @@ When you no longer need the temp Vault instance, clean up by:
 #. In Route53, delete the Google certificate manager `CNAME` verification record
 #. In Route53, change the `vault-dev.lsst.org` or `vault.lsst.org` record to be the value your recorded earlier
 #. Run `terraform apply -destroy -var-file=roundtable-<env>.tfvars`
+#. In Google Cloud, reactivate the `run-managed.requireInvokerIam` organization policy
 
 ## Development
 
